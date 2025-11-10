@@ -10,6 +10,9 @@
     <?php
         session_start();
         require_once 'pintarCirculos.php';
+        require_once 'login.php';
+        $conn = new mysqli($hn, $un, $pw, $db);
+        if ($conn->connect_error) die("Fatal Error"); 
 
         $colores = ["red", "blue", "yellow", "green"];
         $col1 = $colores[array_rand($colores)]; // da a $col1 un color aleatorio del array $colores
